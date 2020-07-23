@@ -7,9 +7,7 @@ class Blog(models.Model):
 
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=250)
-    image = models.ImageField(upload_to='')
+    text = models.TextField(blank=False)
+    image = models.ImageField(upload_to='static/blog')
     date= models.DateField(auto_now=False)
     url = models.URLField(blank=True)
-
-    def __str__(self):
-        return self.title

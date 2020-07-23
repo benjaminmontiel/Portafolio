@@ -17,7 +17,6 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
-from django.http import HttpResponse
 from portfolio import views
 
 
@@ -26,7 +25,7 @@ urlpatterns = [
 
     url('admin/', admin.site.urls),
 
-    url('home/', views.portfolio),
+    url('home/', include('portfolio.urls')),
 
     url('blog/', include('blog.urls')),
 
